@@ -13,6 +13,9 @@ client = MongoClient(
 db = client.dbsparta
 app = Flask(__name__)
 
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 @app.route('/')
 def home():
     return render_template('index.html')
